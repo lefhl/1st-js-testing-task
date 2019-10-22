@@ -1,0 +1,42 @@
+* {
+	padding: 0;
+	margin: 0;
+}
+
+.tets {
+	height: 100vh;
+	display: flex;
+	justify-content: center;
+	height: 50px;
+	display: flex;
+	margin-top: 10px;
+
+}
+
+td {
+	width: 50px;
+	height: 50px;
+	background-color: lightgreen;
+	cursor: pointer;
+	text-align: center;
+	border: 1px solid #ababab;
+	box-shadow: 0 0 7px #000;
+	border-radius: 10px;
+	box-sizing: border-box;
+	font-weight: bold;
+	font-size: 1.5em;
+	color: #fff;
+}
+
+.active_1 {
+	background-color: green;
+	box-shadow: 0 0 7px green;
+}
+.active_2 {
+	background-color: blue;
+	box-shadow: 0 0 7px blue;
+}
+.active_3 {
+	background-color: red;
+	box-shadow: 0 0 7px red;
+}
