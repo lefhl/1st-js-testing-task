@@ -31,8 +31,6 @@
   		for (var i = 0; i < grid_elements; i++) {
     		var $rows = $("<tr>");
     		for (var j = 0; j < grid_elements; j++) {
-      			// $rows.prepend($("<td>").text(randomInteger(1, 3)));
-      			// $rows.setAttribute('data-x', `${i}`);
       			$rows.append($("<td>").text(randomInteger(1, 3)).attr('data-x', `${i+1}`).attr('data-y', `${j+1}`));
     			}
 
@@ -44,58 +42,39 @@
 // Меняем цвет фона элемента и его ближайших соседей по строке в зависимости от его содержимого
 
 	 $('td').click(function(){
-	 	var box_number = this.textContent;
-	 	var active_class = '';
-	 	if (box_number == 1) {
-	 		active_class = 'active_1';
-	 	} else if (box_number == 2) {
-	 		active_class = 'active_2';
-	 	} else {
-	 		active_class = 'active_3';
-	 	}
-  	 	$(this).toggleClass(`${active_class}`);
+	 	var box_number = parseInt(this.textContent);
+
+	 		var active_class = '';
+		 	
+		 	if (box_number == 1) {
+		 		active_class = 'active_1';
+		 	} else if (box_number == 2) {
+		 		active_class = 'active_2';
+		 	} else {
+		 		active_class = 'active_3';
+		 	}
+
+	 	
+	 	$(this).toggleClass(`${active_class}`);
   	 	var data_x_value = parseInt($(this).attr('data-x'));
   	 	var data_y_value = parseInt($(this).attr('data-y'));
-  	 	if (box_number == 1) {
-  	 		for (var s = -1; s < 2; s++) {
-  	 			for (var m = -1; m < 2; m++) {
-  	 				if (s !== 0 || m !== 0) {
-  	 					$(`[data-x = ${data_x_value + s}][data-y = ${data_y_value + m}]`).toggleClass(`${active_class}`);
-  	 				
-  	 				
-  	 				console.log('x = ' + (data_x_value + s));
-  	 				console.log('y = ' + (data_y_value + m));
-  	 				}
-  	 			}
-  	 		}	
-  	 	}
-  	 	if (box_number == 2) {
-  	 		for (var s = -2; s < 3; s++) {
-  	 			for (var m = -2; m < 3; m++) {
-  	 				if (s !== 0 || m !== 0) {
-  	 					$(`[data-x = ${data_x_value + s}][data-y = ${data_y_value + m}]`).toggleClass(`${active_class}`);
-  	 				
-  	 				
-  	 				console.log('x = ' + (data_x_value + s));
-  	 				console.log('y = ' + (data_y_value + m));
-  	 				}
-  	 			}
-  	 		}
-  	 	}
+	 	
+	 	function change_style_neighboring_el(box_number){
+	 			min_count = 0 - box_number;
+	 			max_count = box_number + 1;
+	 			console.log(min_count);
+	 			console.log(max_count);
+		 	for (var s = min_count; s < max_count; s++) {
+		 		for (var m = min_count; m < max_count; m++) {
+		 			if (s !== 0 || m !== 0) {
+		 				$(`[data-x = ${data_x_value + s}][data-y = ${data_y_value + m}]`).toggleClass(`${active_class}`);
+		 			}
+		 		}
+		 	}
+	 	
+	 	}
 
-  	 	if (box_number == 3) {
-  	 		for (var s = -3; s < 4; s++) {
-  	 			for (var m = -3; m < 4; m++) {
-  	 				if (s !== 0 || m !== 0) {
-  	 					$(`[data-x = ${data_x_value + s}][data-y = ${data_y_value + m}]`).toggleClass(`${active_class}`);
-  	 				
-  	 				
-  	 				console.log('x = ' + (data_x_value + s));
-  	 				console.log('y = ' + (data_y_value + m));
-  	 				}
-  	 			}
-  	 		}
-  	 	}
+	 	change_style_neighboring_el(box_number);
 
   	 })
 </script>
