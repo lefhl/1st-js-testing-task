@@ -42,6 +42,7 @@
 // Меняем цвет фона элемента и его ближайших соседей по строке в зависимости от его содержимого
 
 	 $('td').click(function(){
+	 	$("td").removeClass();
 	 	var box_number = parseInt(this.textContent);
 
 	 		var active_class = '';
