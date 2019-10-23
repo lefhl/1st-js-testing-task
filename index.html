@@ -57,94 +57,44 @@
   	 	var data_x_value = parseInt($(this).attr('data-x'));
   	 	var data_y_value = parseInt($(this).attr('data-y'));
   	 	if (box_number == 1) {
-  	 		$(`[data-x = ${data_x_value + 1}][data-y = ${data_y_value}]`).toggleClass(`${active_class}`); 
-  	 		$(`[data-x = ${data_x_value}][data-y = ${data_y_value + 1}]`).toggleClass(`${active_class}`);
-  	 		$(`[data-x = ${data_x_value - 1}][data-y = ${data_y_value - 1}]`).toggleClass(`${active_class}`);
-  	 		$(`[data-x = ${data_x_value + 1}][data-y = ${data_y_value + 1}]`).toggleClass(`${active_class}`);
-  	 		$(`[data-x = ${data_x_value - 1}][data-y = ${data_y_value}]`).toggleClass(`${active_class}`);
-  	 		$(`[data-x = ${data_x_value}][data-y = ${data_y_value - 1}]`).toggleClass(`${active_class}`);
-  	 		$(`[data-x = ${data_x_value + 1}][data-y = ${data_y_value - 1}]`).toggleClass(`${active_class}`);
-  	 		$(`[data-x = ${data_x_value - 1}][data-y = ${data_y_value + 1}]`).toggleClass(`${active_class}`);	 	
+  	 		for (var s = -1; s < 2; s++) {
+  	 			for (var m = -1; m < 2; m++) {
+  	 				if (s !== 0 || m !== 0) {
+  	 					$(`[data-x = ${data_x_value + s}][data-y = ${data_y_value + m}]`).toggleClass(`${active_class}`);
+  	 				
+  	 				
+  	 				console.log('x = ' + (data_x_value + s));
+  	 				console.log('y = ' + (data_y_value + m));
+  	 				}
+  	 			}
+  	 		}	
   	 	}
   	 	if (box_number == 2) {
-  	 		$(`[data-x = ${data_x_value + 1}][data-y = ${data_y_value}]`).toggleClass(`${active_class}`); 
-  	 		$(`[data-x = ${data_x_value}][data-y = ${data_y_value + 1}]`).toggleClass(`${active_class}`);
-  	 		$(`[data-x = ${data_x_value - 1}][data-y = ${data_y_value - 1}]`).toggleClass(`${active_class}`);
-  	 		$(`[data-x = ${data_x_value + 1}][data-y = ${data_y_value + 1}]`).toggleClass(`${active_class}`);
-  	 		$(`[data-x = ${data_x_value - 1}][data-y = ${data_y_value}]`).toggleClass(`${active_class}`);
-  	 		$(`[data-x = ${data_x_value}][data-y = ${data_y_value - 1}]`).toggleClass(`${active_class}`);
-  	 		$(`[data-x = ${data_x_value + 1}][data-y = ${data_y_value - 1}]`).toggleClass(`${active_class}`);
-  	 		$(`[data-x = ${data_x_value - 1}][data-y = ${data_y_value + 1}]`).toggleClass(`${active_class}`);
-
-  	 		$(`[data-x = ${data_x_value + 2}][data-y = ${data_y_value + 1}]`).toggleClass(`${active_class}`); 
-  	 		 $(`[data-x = ${data_x_value + 1}][data-y = ${data_y_value + 2 }]`).toggleClass(`${active_class}`);
-  	 		 $(`[data-x = ${data_x_value + 2}][data-y = ${data_y_value + 2}]`).toggleClass(`${active_class}`);
-  	 		 $(`[data-x = ${data_x_value + 2}][data-y = ${data_y_value}]`).toggleClass(`${active_class}`);
-  	 		 $(`[data-x = ${data_x_value + 2}][data-y = ${data_y_value - 1}]`).toggleClass(`${active_class}`);
-  	 		 $(`[data-x = ${data_x_value + 2}][data-y = ${data_y_value - 2}]`).toggleClass(`${active_class}`);
-  	 		 $(`[data-x = ${data_x_value + 1}][data-y = ${data_y_value - 2}]`).toggleClass(`${active_class}`);
-  	 		 $(`[data-x = ${data_x_value}][data-y = ${data_y_value - 2}]`).toggleClass(`${active_class}`);
-  	 		 $(`[data-x = ${data_x_value}][data-y = ${data_y_value + 2}]`).toggleClass(`${active_class}`);
-  	 		 $(`[data-x = ${data_x_value - 1}][data-y = ${data_y_value - 2}]`).toggleClass(`${active_class}`);
-  	 		 $(`[data-x = ${data_x_value - 1}][data-y = ${data_y_value + 2}]`).toggleClass(`${active_class}`);
-  	 		 $(`[data-x = ${data_x_value - 2}][data-y = ${data_y_value - 2}]`).toggleClass(`${active_class}`);
-  	 		 $(`[data-x = ${data_x_value - 2}][data-y = ${data_y_value + 2}]`).toggleClass(`${active_class}`);
-  	 		 $(`[data-x = ${data_x_value - 2}][data-y = ${data_y_value - 1}]`).toggleClass(`${active_class}`);
-  	 		 $(`[data-x = ${data_x_value - 2}][data-y = ${data_y_value + 1}]`).toggleClass(`${active_class}`);
-  	 		 $(`[data-x = ${data_x_value - 2}][data-y = ${data_y_value}]`).toggleClass(`${active_class}`);
+  	 		for (var s = -2; s < 3; s++) {
+  	 			for (var m = -2; m < 3; m++) {
+  	 				if (s !== 0 || m !== 0) {
+  	 					$(`[data-x = ${data_x_value + s}][data-y = ${data_y_value + m}]`).toggleClass(`${active_class}`);
+  	 				
+  	 				
+  	 				console.log('x = ' + (data_x_value + s));
+  	 				console.log('y = ' + (data_y_value + m));
+  	 				}
+  	 			}
+  	 		}
   	 	}
 
   	 	if (box_number == 3) {
-  	 		$(`[data-x = ${data_x_value + 1}][data-y = ${data_y_value}]`).toggleClass(`${active_class}`); 
-  	 		$(`[data-x = ${data_x_value}][data-y = ${data_y_value + 1}]`).toggleClass(`${active_class}`);
-  	 		$(`[data-x = ${data_x_value - 1}][data-y = ${data_y_value - 1}]`).toggleClass(`${active_class}`);
-  	 		$(`[data-x = ${data_x_value + 1}][data-y = ${data_y_value + 1}]`).toggleClass(`${active_class}`);
-  	 		$(`[data-x = ${data_x_value - 1}][data-y = ${data_y_value}]`).toggleClass(`${active_class}`);
-  	 		$(`[data-x = ${data_x_value}][data-y = ${data_y_value - 1}]`).toggleClass(`${active_class}`);
-  	 		$(`[data-x = ${data_x_value + 1}][data-y = ${data_y_value - 1}]`).toggleClass(`${active_class}`);
-  	 		$(`[data-x = ${data_x_value - 1}][data-y = ${data_y_value + 1}]`).toggleClass(`${active_class}`);
-
-  	 		$(`[data-x = ${data_x_value + 2}][data-y = ${data_y_value + 1}]`).toggleClass(`${active_class}`); 
-  	 		 $(`[data-x = ${data_x_value + 1}][data-y = ${data_y_value + 2 }]`).toggleClass(`${active_class}`);
-  	 		 $(`[data-x = ${data_x_value + 2}][data-y = ${data_y_value + 2}]`).toggleClass(`${active_class}`);
-  	 		 $(`[data-x = ${data_x_value + 2}][data-y = ${data_y_value}]`).toggleClass(`${active_class}`);
-  	 		 $(`[data-x = ${data_x_value + 2}][data-y = ${data_y_value - 1}]`).toggleClass(`${active_class}`);
-  	 		 $(`[data-x = ${data_x_value + 2}][data-y = ${data_y_value - 2}]`).toggleClass(`${active_class}`);
-  	 		 $(`[data-x = ${data_x_value + 1}][data-y = ${data_y_value - 2}]`).toggleClass(`${active_class}`);
-  	 		 $(`[data-x = ${data_x_value}][data-y = ${data_y_value - 2}]`).toggleClass(`${active_class}`);
-  	 		 $(`[data-x = ${data_x_value}][data-y = ${data_y_value + 2}]`).toggleClass(`${active_class}`);
-  	 		 $(`[data-x = ${data_x_value - 1}][data-y = ${data_y_value - 2}]`).toggleClass(`${active_class}`);
-  	 		 $(`[data-x = ${data_x_value - 1}][data-y = ${data_y_value + 2}]`).toggleClass(`${active_class}`);
-  	 		 $(`[data-x = ${data_x_value - 2}][data-y = ${data_y_value - 2}]`).toggleClass(`${active_class}`);
-  	 		 $(`[data-x = ${data_x_value - 2}][data-y = ${data_y_value + 2}]`).toggleClass(`${active_class}`);
-  	 		 $(`[data-x = ${data_x_value - 2}][data-y = ${data_y_value - 1}]`).toggleClass(`${active_class}`);
-  	 		 $(`[data-x = ${data_x_value - 2}][data-y = ${data_y_value + 1}]`).toggleClass(`${active_class}`);
-  	 		 $(`[data-x = ${data_x_value - 2}][data-y = ${data_y_value}]`).toggleClass(`${active_class}`);
-
-  	 		 $(`[data-x = ${data_x_value + 3}][data-y = ${data_y_value}]`).toggleClass(`${active_class}`); 
-  	 		 $(`[data-x = ${data_x_value - 3}][data-y = ${data_y_value}]`).toggleClass(`${active_class}`);
-  	 		 $(`[data-x = ${data_x_value + 3}][data-y = ${data_y_value + 1}]`).toggleClass(`${active_class}`); 
-  	 		 $(`[data-x = ${data_x_value - 3}][data-y = ${data_y_value - 1}]`).toggleClass(`${active_class}`);
-  	 		 $(`[data-x = ${data_x_value + 3}][data-y = ${data_y_value + 2}]`).toggleClass(`${active_class}`); 
-  	 		 $(`[data-x = ${data_x_value - 3}][data-y = ${data_y_value - 2}]`).toggleClass(`${active_class}`);
-  	 		 $(`[data-x = ${data_x_value + 3}][data-y = ${data_y_value + 3}]`).toggleClass(`${active_class}`); 
-  	 		 $(`[data-x = ${data_x_value - 3}][data-y = ${data_y_value - 3}]`).toggleClass(`${active_class}`);
-  	 		 $(`[data-x = ${data_x_value - 3}][data-y = ${data_y_value + 1}]`).toggleClass(`${active_class}`); 
-  	 		 $(`[data-x = ${data_x_value - 3}][data-y = ${data_y_value + 2}]`).toggleClass(`${active_class}`);
-  	 		 $(`[data-x = ${data_x_value - 3}][data-y = ${data_y_value + 3}]`).toggleClass(`${active_class}`); 
-  	 		 $(`[data-x = ${data_x_value - 2}][data-y = ${data_y_value + 3}]`).toggleClass(`${active_class}`);
-  	 		 $(`[data-x = ${data_x_value - 1}][data-y = ${data_y_value + 3}]`).toggleClass(`${active_class}`); 
-  	 		 $(`[data-x = ${data_x_value}][data-y = ${data_y_value + 3}]`).toggleClass(`${active_class}`);
-  	 		 $(`[data-x = ${data_x_value + 1}][data-y = ${data_y_value + 3}]`).toggleClass(`${active_class}`); 
-  	 		 $(`[data-x = ${data_x_value + 2}][data-y = ${data_y_value + 3}]`).toggleClass(`${active_class}`);
-  	 		 $(`[data-x = ${data_x_value + 3}][data-y = ${data_y_value - 1}]`).toggleClass(`${active_class}`); 
-  	 		 $(`[data-x = ${data_x_value + 3}][data-y = ${data_y_value - 2}]`).toggleClass(`${active_class}`); 
-  	 		 $(`[data-x = ${data_x_value - 2}][data-y = ${data_y_value - 3}]`).toggleClass(`${active_class}`);  
-  	 		 $(`[data-x = ${data_x_value - 1}][data-y = ${data_y_value - 3}]`).toggleClass(`${active_class}`);  
-  	 		 $(`[data-x = ${data_x_value}][data-y = ${data_y_value - 3}]`).toggleClass(`${active_class}`);  
-  	 		 $(`[data-x = ${data_x_value + 1}][data-y = ${data_y_value - 3}]`).toggleClass(`${active_class}`); 
-  	 		 $(`[data-x = ${data_x_value + 2}][data-y = ${data_y_value - 3}]`).toggleClass(`${active_class}`);
-  	 		 $(`[data-x = ${data_x_value + 3}][data-y = ${data_y_value - 3}]`).toggleClass(`${active_class}`);     
+  	 		for (var s = -3; s < 4; s++) {
+  	 			for (var m = -3; m < 4; m++) {
+  	 				if (s !== 0 || m !== 0) {
+  	 					$(`[data-x = ${data_x_value + s}][data-y = ${data_y_value + m}]`).toggleClass(`${active_class}`);
+  	 				
+  	 				
+  	 				console.log('x = ' + (data_x_value + s));
+  	 				console.log('y = ' + (data_y_value + m));
+  	 				}
+  	 			}
+  	 		}
   	 	}
 
   	 })
