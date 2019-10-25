@@ -66,7 +66,7 @@
 		 		for (var m = min_count; m < max_count; m++) {
 		 			if ((s == box_number || m == box_number) || 
 		 				(s == -box_number || m == -box_number)) {
-		 				$(`[data-x = ${data_x_value + s}][data-y = ${data_y_value + m}]`).addClass(`${active_class}`);
+		 				$(`[data-x = ${data_x_value + s}][data-y = ${data_y_value + m}]`).removeClass('active_3 active_1 active_2 ').addClass(`${active_class}`);
 		 			}
 		 		}
 		 	}
